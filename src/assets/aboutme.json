@@ -1,0 +1,12 @@
+{
+ "Name":"Abhishek Singh",
+ "Profession":"Developer",
+ "Title":"Product engineer",
+ "Experience":"2.4 years",
+ "profile":
+  {
+   "LinkedIn":"<a href='https://www.linkedin.com/in/abhishek-ks/' class='text-grey' target='_blank'>https://www.linkedin.com/in/abhishek-ks/</a>",
+   "Github":"<a href='https://github.com/Abhishek325' class='text-grey' target='_blank'>https://github.com/Abhishek325</a>",
+   "StackOverflow":"<a href='https://stackoverflow.com/users/4958453/abhishek' class='text-grey' target='_blank'>https://stackoverflow.com/users/4958453/abhishek</a>"
+  }
+}
