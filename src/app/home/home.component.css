@@ -9,3 +9,7 @@
 code{
     color:#aaa;
 }
+.display-4{
+    cursor: pointer;
+    outline: none;
+}

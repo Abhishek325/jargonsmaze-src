@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { Post } from '../post';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
+
+@Injectable()
 export class PostsComponent implements OnInit {
   post: Post;
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private titleService: Title
   ) { }
 
   getPost(): void {
@@ -24,5 +28,9 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.getPost();
+  }
+  
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 }

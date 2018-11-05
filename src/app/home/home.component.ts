@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../post';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { Post } from '../post';
 export class HomeComponent implements OnInit {
   posts: Post[];
   aboutMe: String
-  constructor(
+  constructor(private titleService: Title,
     private http: HttpClient
   ) { }
 
@@ -25,11 +26,15 @@ export class HomeComponent implements OnInit {
   loadAboutMe() {
     const baseURL = document.getElementsByTagName('base')[0].href;
     this.http.get(baseURL + 'assets/aboutme.json')
-      .subscribe(data => { this.aboutMe = JSON.stringify(data,null,2)});
+      .subscribe(data => { this.aboutMe = JSON.stringify(data, null, 2) });
   }
 
   ngOnInit() {
     this.loadPosts();
     this.loadAboutMe();
+  }
+  
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 }
